@@ -1,0 +1,138 @@
+{% extends 'application/base.html' %}
+
+{% block title %}Confirm Delete - {{ student.first_name }} {{ student.last_name }}{% endblock %}
+
+{% block page_title %}Confirm Delete Student{% endblock %}
+
+{% block extra_css %}
+    <style>
+        .confirm-card {
+            background: white;
+            border: 1px solid #D4C4B0;
+            border-radius: 8px;
+            padding: 40px;
+            max-width: 500px;
+            margin: 40px auto;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .warning-icon {
+            font-size: 60px;
+            color: #f44336;
+            margin-bottom: 20px;
+        }
+
+        .confirm-title {
+            font-family: 'Yatra One', sans-serif;
+            font-size: 1.5rem;
+            color: var(--deep-saffron);
+            margin-bottom: 15px;
+        }
+
+        .confirm-message {
+            color: var(--medium-brown);
+            font-size: 0.95rem;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .student-info {
+            background: #FFF3D0;
+            border: 1px solid var(--gold);
+            border-radius: 4px;
+            padding: 20px;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+        }
+
+        .student-name {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: var(--deep-saffron);
+            margin-bottom: 10px;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-delete-confirm {
+            background: #f44336;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-family: 'Crimson Pro', serif;
+            font-size: 0.95rem;
+            transition: all 0.3s;
+        }
+
+        .btn-delete-confirm:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(244, 67, 54, 0.4);
+        }
+
+        .btn-cancel-delete {
+            background: var(--cream);
+            color: var(--dark-brown);
+            border: 1px solid var(--gold);
+            padding: 12px 30px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-family: 'Crimson Pro', serif;
+            font-size: 0.95rem;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s;
+        }
+
+        .btn-cancel-delete:hover {
+            background: var(--light-gold);
+        }
+
+        .warning-text {
+            color: #c00;
+            font-size: 0.85rem;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+    </style>
+{% endblock %}
+
+{% block content %}
+    <div class="confirm-card">
+        <div class="warning-icon">⚠️</div>
+        
+        <h1 class="confirm-title">Delete Student?</h1>
+        
+        <p class="confirm-message">
+            You are about to permanently delete this student record. This action <strong>cannot be undone</strong>.
+        </p>
+
+        <div class="student-info">
+            <div class="student-name">{{ student.first_name }} {{ student.last_name }}</div>
+            <div>Contact: {{ student.contact_no }}</div>
+            <div>Programme: {{ student.programme }}</div>
+            <div>Admission Date: {{ student.admission_date|date:"d M Y" }}</div>
+        </div>
+
+        <p class="warning-text">All data associated with this student will be permanently removed from the system.</p>
+
+        <div class="action-buttons">
+            <form method="post" style="margin: 0;">
+                {% csrf_token %}
+                <button type="submit" class="btn-delete-confirm">
+                    🗑️ Yes, Delete Permanently
+                </button>
+            </form>
+            <a href="{% url 'student_detail' student.id %}" class="btn-cancel-delete">
+                ← No, Go Back
+            </a>
+        </div>
+    </div>
+{% endblock %}

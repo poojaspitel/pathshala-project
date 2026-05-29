@@ -1,0 +1,322 @@
+{% extends 'application/base.html' %}
+
+{% block title %}
+    {% if is_edit %}Edit Student{% else %}Add Student{% endif %} - Shree Guru Kumareshwar
+{% endblock %}
+
+{% block page_title %}
+    {% if is_edit %}Edit Student{% else %}Add Student{% endif %}
+{% endblock %}
+
+{% block extra_css %}
+<style>
+    .form-shell {
+        background: linear-gradient(180deg, #fffaf3 0%, #fffdf8 100%);
+        border: 1px solid #E5D4B6;
+        border-radius: 12px;
+        padding: 24px;
+        box-shadow: 0 8px 24px rgba(42, 26, 10, 0.08);
+    }
+
+    .form-shell h3 {
+        font-family: 'Yatra One', sans-serif;
+        color: var(--deep-saffron);
+        margin-bottom: 6px;
+    }
+
+    .form-shell p {
+        color: var(--medium-brown);
+        margin-bottom: 18px;
+    }
+
+    .section-block {
+        border: 1px solid #E7D8C1;
+        border-radius: 10px;
+        padding: 18px;
+        margin-bottom: 18px;
+        background: #fff;
+    }
+
+    .section-label {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-family: 'Yatra One', sans-serif;
+        color: var(--deep-saffron);
+        font-size: 1.02rem;
+        margin-bottom: 14px;
+        letter-spacing: 0.5px;
+    }
+
+    .form-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+    }
+
+    .form-grid.full {
+        grid-template-columns: 1fr;
+    }
+
+    .field {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+    }
+
+    .field label {
+        color: var(--medium-brown);
+        font-weight: 700;
+        font-size: 0.92rem;
+        text-transform: uppercase;
+        letter-spacing: 0.3px;
+    }
+
+    .field label .required {
+        color: #c62828;
+    }
+
+    .field input,
+    .field select,
+    .field textarea {
+        width: 100%;
+        border: 1px solid #D8C6A8;
+        border-radius: 6px;
+        padding: 10px 12px;
+        font-family: 'Crimson Pro', serif;
+        font-size: 0.98rem;
+        color: var(--dark-brown);
+        background: #fffdf8;
+        transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .field input:focus,
+    .field select:focus,
+    .field textarea:focus {
+        outline: none;
+        border-color: var(--saffron);
+        box-shadow: 0 0 0 3px rgba(212, 97, 26, 0.15);
+        background: #fff;
+    }
+
+    .field textarea {
+        min-height: 80px;
+        resize: vertical;
+    }
+
+    .field .helptext {
+        color: #7c6a55;
+        font-size: 0.88rem;
+    }
+
+    .errorlist {
+        margin: 0;
+        padding-left: 14px;
+        color: #c62828;
+        font-size: 0.9rem;
+    }
+
+    .checkbox-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px;
+    }
+
+    .checkbox-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 8px;
+        background: #fffaf3;
+        border: 1px solid #efe4d5;
+        border-radius: 6px;
+        padding: 10px 12px;
+        color: var(--medium-brown);
+    }
+
+    .checkbox-item input {
+        width: 16px;
+        height: 16px;
+        margin-top: 2px;
+    }
+
+    .form-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 10px;
+    }
+
+    @media (max-width: 900px) {
+        .form-grid,
+        .checkbox-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="card">
+    <div class="form-shell">
+        <h3>{% if is_edit %}Update Student Admission Record{% else %}Student Admission Form{% endif %}</h3>
+        <p>Fill in the details below. The form is connected to the student database and will save the record correctly.</p>
+
+        <form method="post" enctype="multipart/form-data" novalidate>
+            {% csrf_token %}
+
+            {% if form.non_field_errors %}
+                <div class="alert alert-error">{{ form.non_field_errors }}</div>
+            {% endif %}
+
+            <div class="section-block">
+                <div class="section-label">🪔 Student Details</div>
+                <div class="form-grid">
+                    <div class="field">{{ form.first_name.label_tag }} {{ form.first_name }} {{ form.first_name.errors }}</div>
+                    <div class="field">{{ form.last_name.label_tag }} {{ form.last_name }} {{ form.last_name.errors }}</div>
+                    <div class="field">{{ form.date_of_birth.label_tag }} {{ form.date_of_birth }} {{ form.date_of_birth.errors }}</div>
+                    <div class="field">{{ form.age.label_tag }} {{ form.age }} {{ form.age.errors }}</div>
+                    <div class="field">{{ form.gender.label_tag }} {{ form.gender }} {{ form.gender.errors }}</div>
+                    <div class="field">{{ form.nationality.label_tag }} {{ form.nationality }} {{ form.nationality.errors }}</div>
+                    <div class="field">{{ form.mother_tongue.label_tag }} {{ form.mother_tongue }} {{ form.mother_tongue.errors }}</div>
+                    <div class="field">{{ form.photo.label_tag }} {{ form.photo }} {{ form.photo.errors }}</div>
+                </div>
+            </div>
+
+            <div class="section-block">
+                <div class="section-label">📿 Programme / Course</div>
+                <div class="form-grid">
+                    <div class="field">{{ form.programme.label_tag }} {{ form.programme }} {{ form.programme.errors }}</div>
+                    <div class="field">{{ form.duration.label_tag }} {{ form.duration }} {{ form.duration.errors }}</div>
+                    <div class="field">{{ form.mode.label_tag }} {{ form.mode }} {{ form.mode.errors }}</div>
+                    <div class="field">{{ form.start_date.label_tag }} {{ form.start_date }} {{ form.start_date.errors }}</div>
+                </div>
+                <div class="form-grid full" style="margin-top: 14px;">
+                    <div class="field">{{ form.prior_knowledge.label_tag }} {{ form.prior_knowledge }} {{ form.prior_knowledge.errors }}</div>
+                </div>
+            </div>
+
+            <div class="section-block">
+                <div class="section-label">👨‍👩‍👦 Parent / Guardian Details</div>
+                <div class="form-grid">
+                    <div class="field">{{ form.father_name.label_tag }} {{ form.father_name }} {{ form.father_name.errors }}</div>
+                    <div class="field">{{ form.mother_name.label_tag }} {{ form.mother_name }} {{ form.mother_name.errors }}</div>
+                    <div class="field">{{ form.occupation.label_tag }} {{ form.occupation }} {{ form.occupation.errors }}</div>
+                    <div class="field">{{ form.contact_no.label_tag }} {{ form.contact_no }} {{ form.contact_no.errors }}</div>
+                    <div class="field">{{ form.whatsapp_no.label_tag }} {{ form.whatsapp_no }} {{ form.whatsapp_no.errors }}</div>
+                    <div class="field">{{ form.email.label_tag }} {{ form.email }} {{ form.email.errors }}</div>
+                </div>
+            </div>
+
+            <div class="section-block">
+                <div class="section-label">🏡 Residential Address</div>
+                <div class="form-grid full">
+                    <div class="field">{{ form.address_line1.label_tag }} {{ form.address_line1 }} {{ form.address_line1.errors }}</div>
+                    <div class="field">{{ form.address_line2.label_tag }} {{ form.address_line2 }} {{ form.address_line2.errors }}</div>
+                </div>
+                <div class="form-grid" style="margin-top: 14px;">
+                    <div class="field">{{ form.city.label_tag }} {{ form.city }} {{ form.city.errors }}</div>
+                    <div class="field">{{ form.state.label_tag }} {{ form.state }} {{ form.state.errors }}</div>
+                    <div class="field">{{ form.pin_code.label_tag }} {{ form.pin_code }} {{ form.pin_code.errors }}</div>
+                </div>
+            </div>
+
+            <div class="section-block">
+                <div class="section-label">📜 Previous Education</div>
+                <div class="form-grid">
+                    <div class="field">{{ form.last_school.label_tag }} {{ form.last_school }} {{ form.last_school.errors }}</div>
+                    <div class="field">{{ form.last_class.label_tag }} {{ form.last_class }} {{ form.last_class.errors }}</div>
+                    <div class="field">{{ form.year_passing.label_tag }} {{ form.year_passing }} {{ form.year_passing.errors }}</div>
+                    <div class="field">{{ form.percentage.label_tag }} {{ form.percentage }} {{ form.percentage.errors }}</div>
+                </div>
+            </div>
+
+            <div class="section-block">
+                <div class="section-label">🌿 Health & Special Information</div>
+                <div class="form-grid">
+                    <div class="field">{{ form.blood_group.label_tag }} {{ form.blood_group }} {{ form.blood_group.errors }}</div>
+                    <div class="field">{{ form.medical_conditions.label_tag }} {{ form.medical_conditions }} {{ form.medical_conditions.errors }}</div>
+                </div>
+                <div class="form-grid full" style="margin-top: 14px;">
+                    <div class="field">{{ form.allergies.label_tag }} {{ form.allergies }} {{ form.allergies.errors }}</div>
+                </div>
+            </div>
+
+            <div class="section-block">
+                <div class="section-label">📋 Documents to be Submitted</div>
+                <div class="checkbox-grid">
+                    <label class="checkbox-item">{{ form.doc_birth_certificate }} Birth Certificate / Proof of Age</label>
+                    <label class="checkbox-item">{{ form.doc_marksheet }} Last School Marksheet / Transfer Certificate</label>
+                    <label class="checkbox-item">{{ form.doc_photo }} 4 Passport-Size Photographs</label>
+                    <label class="checkbox-item">{{ form.doc_address_proof }} Address Proof (Aadhaar / Voter ID / Ration Card)</label>
+                    <label class="checkbox-item">{{ form.doc_medical }} Medical Fitness Certificate</label>
+                    <label class="checkbox-item">{{ form.doc_vedic }} Vedic Study Certificate (if any)</label>
+                    <label class="checkbox-item">{{ form.doc_income }} Income Certificate (for scholarship applicants)</label>
+                </div>
+            </div>
+
+            <div class="section-block">
+                <div class="section-label">🙏 Reference / How Did You Know About Us?</div>
+                <div class="form-grid">
+                    <div class="field">{{ form.reference_source.label_tag }} {{ form.reference_source }} {{ form.reference_source.errors }}</div>
+                    <div class="field">{{ form.reference_person.label_tag }} {{ form.reference_person }} {{ form.reference_person.errors }}</div>
+                </div>
+            </div>
+
+            <div class="section-block">
+                <div class="section-label">🖊️ Declaration</div>
+                <div class="field" style="background:#fffaf3;border:1px solid #efe4d5;border-radius:8px;padding:12px;color:var(--medium-brown);line-height:1.6;">
+                    <strong>Declaration:</strong> I / We, the parent(s) / guardian(s) of the above-named student, hereby declare that all information furnished in this form is true and correct to the best of my / our knowledge. I / We agree to abide by the rules, regulations, and discipline of the Pathshala, and I / We understand that any misrepresentation may result in cancellation of admission.
+                </div>
+                <div class="field" style="margin-top:12px;">
+                    <label class="checkbox-item" style="display:flex;align-items:center;gap:8px;background:#fffaf3;border:1px solid #efe4d5;border-radius:8px;padding:10px 12px;">
+                        {{ form.declaration_accepted }} I / We accept the above declaration and the Gurukul's terms and conditions.
+                    </label>
+                    {{ form.declaration_accepted.errors }}
+                </div>
+            </div>
+
+            <div class="section-block">
+                <div class="section-label">🖊️ Final Details</div>
+                <div class="form-grid">
+                    <div class="field">{{ form.application_date.label_tag }} {{ form.application_date }} {{ form.application_date.errors }}</div>
+                    <div class="field">{{ form.signature.label_tag }} {{ form.signature }} {{ form.signature.errors }}</div>
+                </div>
+            </div>
+
+            <div class="form-actions">
+                <button type="submit" class="btn btn-primary">{% if is_edit %}Update Student{% else %}Save Student{% endif %}</button>
+                <a href="{% url 'student_list' %}" class="btn btn-secondary">Cancel</a>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    function calculateAge() {
+        const dobInput = document.getElementById('id_date_of_birth');
+        const ageInput = document.getElementById('ageInput');
+        if (!dobInput || !ageInput) return;
+        if (!dobInput.value) {
+            ageInput.value = '';
+            return;
+        }
+        const dob = new Date(dobInput.value);
+        if (isNaN(dob.getTime())) return;
+        const today = new Date();
+        let age = today.getFullYear() - dob.getFullYear();
+        const monthDiff = today.getMonth() - dob.getMonth();
+        if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < dob.getDate())) age--;
+        ageInput.value = age >= 0 ? age : '';
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+        const dobInput = document.getElementById('id_date_of_birth');
+        if (dobInput) {
+            dobInput.addEventListener('change', calculateAge);
+            calculateAge();
+        }
+    });
+</script>
+{% endblock %}
