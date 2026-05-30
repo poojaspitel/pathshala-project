@@ -48,6 +48,11 @@ class Student(models.Model):
         ('3 Years', '3 Years'),
         ('Short Course', 'Short Course (3–6 months)'),
     ]
+
+    SHIVA_DEEKSHA_CHOICES = [
+        ('Yes', 'Yes'),
+        ('No', 'No'),
+    ]
     
     # Student Details
     first_name = models.CharField(max_length=100)
@@ -104,6 +109,7 @@ class Student(models.Model):
     # Additional Info
     reference_source = models.CharField(max_length=100, choices=REFERENCE_SOURCE_CHOICES, blank=True)
     reference_person = models.CharField(max_length=100, blank=True)
+    shiva_deeksha = models.CharField(max_length=3, choices=SHIVA_DEEKSHA_CHOICES, default='No')
     signature = models.CharField(max_length=255, blank=True)
     declaration_accepted = models.BooleanField(default=False)
     

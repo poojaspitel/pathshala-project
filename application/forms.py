@@ -39,12 +39,6 @@ class StudentForm(forms.ModelForm):
             'style': 'background:#F5EDD8;color:#8B5A1A;cursor:not-allowed;'
         })
     )
-    gender = forms.ChoiceField(
-        choices=[('Male', 'Male')],
-        initial='Male',
-        required=True,
-        widget=forms.RadioSelect
-    )
     state = forms.ChoiceField(
         choices=INDIAN_STATES,
         required=True,
@@ -59,15 +53,12 @@ class StudentForm(forms.ModelForm):
     class Meta:
         model = Student
         fields = [
-            'first_name', 'last_name', 'date_of_birth', 'gender', 'nationality', 'mother_tongue', 'photo',
-            'programme', 'duration', 'mode', 'start_date', 'prior_knowledge',
+            'first_name', 'last_name', 'date_of_birth', 'nationality', 'photo',
             'father_name', 'mother_name', 'occupation', 'contact_no', 'whatsapp_no', 'email',
             'address_line1', 'address_line2', 'city', 'state', 'pin_code',
-            'last_school', 'last_class', 'year_passing', 'percentage',
+            'last_school', 'last_class', 'year_passing', 'shiva_deeksha',
             'blood_group', 'medical_conditions', 'allergies',
-            'doc_birth_certificate', 'doc_marksheet', 'doc_photo', 'doc_address_proof', 'doc_medical', 'doc_vedic', 'doc_income',
-            'reference_source', 'reference_person',
-            'signature', 'declaration_accepted',
+            'declaration_accepted',
         ]
         widgets = {
             'first_name': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'First Name'}),
@@ -94,7 +85,7 @@ class StudentForm(forms.ModelForm):
             'last_school': forms.TextInput(attrs={'class': 'form-control'}),
             'last_class': forms.TextInput(attrs={'class': 'form-control'}),
             'year_passing': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'e.g. 2025'}),
-            'percentage': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'e.g. 78%'}),
+            'shiva_deeksha': forms.Select(attrs={'class': 'form-control'}),
             'blood_group': forms.Select(attrs={'class': 'form-control'}),
             'medical_conditions': forms.Textarea(attrs={'class': 'form-control', 'rows': 2}),
             'allergies': forms.Textarea(attrs={'class': 'form-control', 'rows': 2}),
@@ -137,7 +128,7 @@ class StudentForm(forms.ModelForm):
             'last_school': 'Last School / Institution',
             'last_class': 'Highest Standard / Class Passed',
             'year_passing': 'Year of Passing',
-            'percentage': 'Percentage / Grade',
+            'shiva_deeksha': 'Shiva Deeksha (Ayyachara)',
             'blood_group': 'Blood Group',
             'medical_conditions': 'Known Medical Conditions',
             'allergies': 'Allergies / Special Requirements',
@@ -157,8 +148,6 @@ class StudentForm(forms.ModelForm):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.fields['gender'].initial = 'Male'
-        self.fields['gender'].widget = forms.RadioSelect(choices=[('Male', 'Male')])
         self.fields['state'].choices = INDIAN_STATES
         self.fields['application_date'].initial = getattr(self.instance, 'admission_date', date.today()) or date.today()
         if self.instance and self.instance.pk:

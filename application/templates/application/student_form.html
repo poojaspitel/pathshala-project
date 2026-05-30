@@ -175,25 +175,11 @@
                     <div class="field">{{ form.last_name.label_tag }} {{ form.last_name }} {{ form.last_name.errors }}</div>
                     <div class="field">{{ form.date_of_birth.label_tag }} {{ form.date_of_birth }} {{ form.date_of_birth.errors }}</div>
                     <div class="field">{{ form.age.label_tag }} {{ form.age }} {{ form.age.errors }}</div>
-                    <div class="field">{{ form.gender.label_tag }} {{ form.gender }} {{ form.gender.errors }}</div>
                     <div class="field">{{ form.nationality.label_tag }} {{ form.nationality }} {{ form.nationality.errors }}</div>
-                    <div class="field">{{ form.mother_tongue.label_tag }} {{ form.mother_tongue }} {{ form.mother_tongue.errors }}</div>
                     <div class="field">{{ form.photo.label_tag }} {{ form.photo }} {{ form.photo.errors }}</div>
                 </div>
             </div>
 
-            <div class="section-block">
-                <div class="section-label">📿 Programme / Course</div>
-                <div class="form-grid">
-                    <div class="field">{{ form.programme.label_tag }} {{ form.programme }} {{ form.programme.errors }}</div>
-                    <div class="field">{{ form.duration.label_tag }} {{ form.duration }} {{ form.duration.errors }}</div>
-                    <div class="field">{{ form.mode.label_tag }} {{ form.mode }} {{ form.mode.errors }}</div>
-                    <div class="field">{{ form.start_date.label_tag }} {{ form.start_date }} {{ form.start_date.errors }}</div>
-                </div>
-                <div class="form-grid full" style="margin-top: 14px;">
-                    <div class="field">{{ form.prior_knowledge.label_tag }} {{ form.prior_knowledge }} {{ form.prior_knowledge.errors }}</div>
-                </div>
-            </div>
 
             <div class="section-block">
                 <div class="section-label">👨‍👩‍👦 Parent / Guardian Details</div>
@@ -226,7 +212,13 @@
                     <div class="field">{{ form.last_school.label_tag }} {{ form.last_school }} {{ form.last_school.errors }}</div>
                     <div class="field">{{ form.last_class.label_tag }} {{ form.last_class }} {{ form.last_class.errors }}</div>
                     <div class="field">{{ form.year_passing.label_tag }} {{ form.year_passing }} {{ form.year_passing.errors }}</div>
-                    <div class="field">{{ form.percentage.label_tag }} {{ form.percentage }} {{ form.percentage.errors }}</div>
+                </div>
+            </div>
+
+            <div class="section-block">
+                <div class="section-label">🕉️ Shiva Deeksha (Ayyachara)</div>
+                <div class="form-grid">
+                    <div class="field">{{ form.shiva_deeksha.label_tag }} {{ form.shiva_deeksha }} {{ form.shiva_deeksha.errors }}</div>
                 </div>
             </div>
 
@@ -242,28 +234,7 @@
             </div>
 
             <div class="section-block">
-                <div class="section-label">📋 Documents to be Submitted</div>
-                <div class="checkbox-grid">
-                    <label class="checkbox-item">{{ form.doc_birth_certificate }} Birth Certificate / Proof of Age</label>
-                    <label class="checkbox-item">{{ form.doc_marksheet }} Last School Marksheet / Transfer Certificate</label>
-                    <label class="checkbox-item">{{ form.doc_photo }} 4 Passport-Size Photographs</label>
-                    <label class="checkbox-item">{{ form.doc_address_proof }} Address Proof (Aadhaar / Voter ID / Ration Card)</label>
-                    <label class="checkbox-item">{{ form.doc_medical }} Medical Fitness Certificate</label>
-                    <label class="checkbox-item">{{ form.doc_vedic }} Vedic Study Certificate (if any)</label>
-                    <label class="checkbox-item">{{ form.doc_income }} Income Certificate (for scholarship applicants)</label>
-                </div>
-            </div>
-
-            <div class="section-block">
-                <div class="section-label">🙏 Reference / How Did You Know About Us?</div>
-                <div class="form-grid">
-                    <div class="field">{{ form.reference_source.label_tag }} {{ form.reference_source }} {{ form.reference_source.errors }}</div>
-                    <div class="field">{{ form.reference_person.label_tag }} {{ form.reference_person }} {{ form.reference_person.errors }}</div>
-                </div>
-            </div>
-
-            <div class="section-block">
-                <div class="section-label">🖊️ Declaration</div>
+                <div class="section-label"> Declaration</div>
                 <div class="field" style="background:#fffaf3;border:1px solid #efe4d5;border-radius:8px;padding:12px;color:var(--medium-brown);line-height:1.6;">
                     <strong>Declaration:</strong> I / We, the parent(s) / guardian(s) of the above-named student, hereby declare that all information furnished in this form is true and correct to the best of my / our knowledge. I / We agree to abide by the rules, regulations, and discipline of the Pathshala, and I / We understand that any misrepresentation may result in cancellation of admission.
                 </div>
@@ -279,7 +250,6 @@
                 <div class="section-label">🖊️ Final Details</div>
                 <div class="form-grid">
                     <div class="field">{{ form.application_date.label_tag }} {{ form.application_date }} {{ form.application_date.errors }}</div>
-                    <div class="field">{{ form.signature.label_tag }} {{ form.signature }} {{ form.signature.errors }}</div>
                 </div>
             </div>
 
