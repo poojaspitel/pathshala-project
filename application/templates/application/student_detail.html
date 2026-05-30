@@ -234,6 +234,24 @@
         </div>
     </div>
 
+    <!-- Shiva Deeksha Card -->
+    <div class="detail-card">
+        <div class="detail-section-title">🕉️ Shiva Deeksha</div>
+
+        <div class="detail-row full">
+            <div class="detail-field">
+                <span class="detail-label">Has Received Shiva Deeksha</span>
+                <span class="detail-value">
+                    {% if student.shiva_deeksha == 'Yes' %}
+                        <span class="badge badge-success">✅ Yes</span>
+                    {% else %}
+                        <span class="badge badge-danger">❌ No</span>
+                    {% endif %}
+                </span>
+            </div>
+        </div>
+    </div>
+
     <!-- Health Information Card -->
     <div class="detail-card">
         <div class="detail-section-title">🌿 Health & Special Information</div>
