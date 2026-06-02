@@ -186,7 +186,6 @@ def student_export_pdf(request, pk):
         ['Date of Birth', student.date_of_birth.strftime("%d %B %Y") if student.date_of_birth else 'N/A'],
         ['Age', f"{student.get_age()} years"],
         ['Nationality', student.nationality],
-        ['Gender', student.gender],
     ]
     personal_table = Table(personal_data, colWidths=[2*inch, 4*inch])
     personal_table.setStyle(TableStyle([
