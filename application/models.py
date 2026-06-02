@@ -75,8 +75,8 @@ class Student(models.Model):
     father_name = models.CharField(max_length=100)
     mother_name = models.CharField(max_length=100, blank=True)
     occupation = models.CharField(max_length=100, blank=True)
-    contact_no = models.CharField(max_length=15)
-    whatsapp_no = models.CharField(max_length=15, blank=True)
+    contact_no = models.CharField(max_length=10)
+    whatsapp_no = models.CharField(max_length=10, blank=True)
     email = models.EmailField(blank=True)
     
     # Address

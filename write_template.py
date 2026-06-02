@@ -1,4 +1,7 @@
-{% extends 'application/base.html' %}
+#!/usr/bin/env python
+"""Update student form template with photo requirements."""
+
+new_template = '''{% extends 'application/base.html' %}
 
 {% block title %}
     {% if is_edit %}Edit Student{% else %}Add Student{% endif %} - Shree Guru Kumareshwar
@@ -201,12 +204,13 @@
                         {% endif %}
                         {{ form.photo }} 
                         {{ form.photo.errors }}
-                        <div id="photoPreview" style="margin-top: 10px; display:none;">
-                            <p style="margin: 0 0 8px 0; font-size: 0.9rem; color: #2E7D32;"><strong>Selected Photo Preview:</strong></p>
-                            <img id="photoPreviewImage" src="" alt="Selected Student Photo Preview" style="max-width: 150px; border-radius: 6px; border: 2px solid #4CAF50;" />
-                        </div>
-                        <div style="margin-top: 10px; font-size: 0.85rem; color: #666;">
-                            Upload any clear image file. You can crop or adjust your photo before selecting it. No passport-size restriction is enforced.
+                        <div class="photo-requirements">
+                            <strong>📷 Photo Requirements:</strong><br/>
+                            • <strong>Format:</strong> JPEG, PNG, or WebP image files<br/>
+                            • <strong>File Size:</strong> Maximum 2MB<br/>
+                            • <strong>Dimensions:</strong> Minimum 100×100px, Maximum 2000×2000px<br/>
+                            • <strong>Aspect Ratio:</strong> ID-size photos (roughly square, e.g., 2×2", 3×4")<br/>
+                            • <strong>Quality:</strong> Clear, passport-style identification photo
                         </div>
                     </div>
                 </div>
@@ -374,28 +378,13 @@
             dobInput.addEventListener('change', calculateAge);
             calculateAge();
         }
-
-        const photoInput = document.getElementById('id_photo');
-        const photoPreview = document.getElementById('photoPreview');
-        const photoPreviewImage = document.getElementById('photoPreviewImage');
-
-        if (photoInput && photoPreview && photoPreviewImage) {
-            photoInput.addEventListener('change', function () {
-                const file = photoInput.files && photoInput.files[0];
-                if (!file) {
-                    photoPreview.style.display = 'none';
-                    photoPreviewImage.src = '';
-                    return;
-                }
-
-                const reader = new FileReader();
-                reader.onload = function (e) {
-                    photoPreviewImage.src = e.target.result;
-                    photoPreview.style.display = 'block';
-                };
-                reader.readAsDataURL(file);
-            });
-        }
     });
 </script>
 {% endblock %}
+'''
+
+# Write the new template
+with open('application/templates/application/student_form.html', 'w', encoding='utf-8') as f:
+    f.write(new_template)
+
+print('✓ Student form template updated with photo requirements')

@@ -31,6 +31,7 @@ urlpatterns = [
     path('students/<int:pk>/', views.student_detail, name='student_detail'),
     path('students/<int:pk>/edit/', views.student_edit, name='student_edit'),
     path('students/<int:pk>/delete/', views.student_delete, name='student_delete'),
+    path('students/<int:pk>/pdf/', views.student_export_pdf, name='student_export_pdf'),
 ]
 
 if settings.DEBUG:

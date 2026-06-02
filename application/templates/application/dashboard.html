@@ -32,7 +32,6 @@
                         <tr>
                             <th>Student Name</th>
                             <th>Contact</th>
-                            <th>Programme</th>
                             <th>Admission Date</th>
                             <th>Actions</th>
                         </tr>
@@ -42,7 +41,6 @@
                             <tr>
                                 <td>{{ student.first_name }} {{ student.last_name }}</td>
                                 <td>{{ student.contact_no }}</td>
-                                <td>{{ student.programme }}</td>
                                 <td>{{ student.admission_date|date:"d M Y" }}</td>
                                 <td>
                                     <div class="actions">
@@ -72,4 +70,64 @@
             </a>
         </div>
     </div>
+
+<!-- Print Styles -->
+<style media="print">
+    @media print {
+        .stats-grid { display: none !important; }
+        .card:last-child { display: none !important; }
+        .sidebar { display: none !important; }
+        .header-top { display: none !important; }
+        .messages { display: none !important; }
+        
+        /* Remove default browser print headers/footers */
+        @page {
+            size: A4;
+            margin: 0.5in;
+            @bottom-right {
+                content: "";
+            }
+            @bottom-left {
+                content: "";
+            }
+            @top-left {
+                content: "";
+            }
+            @top-right {
+                content: "";
+            }
+        }
+        
+        html {
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+        
+        body { 
+            background: white !important;
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+        
+        .wrapper {
+            display: block !important;
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+        
+        .main-content {
+            padding: 20px !important;
+            margin: 0 !important;
+        }
+        
+        .card {
+            box-shadow: none !important;
+            border: 1px solid #E5D4B6 !important;
+        }
+        
+        tr {
+            page-break-inside: avoid;
+        }
+    }
+</style>
 {% endblock %}

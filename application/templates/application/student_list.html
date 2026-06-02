@@ -36,8 +36,6 @@
                             <th>Student Name</th>
                             <th>Contact Number</th>
                             <th>Email</th>
-                            <th>Programme</th>
-                            <th>Mode</th>
                             <th>Admission Date</th>
                             <th>Actions</th>
                         </tr>
@@ -51,12 +49,6 @@
                                 </td>
                                 <td>{{ student.contact_no }}</td>
                                 <td>{{ student.email|default:"N/A" }}</td>
-                                <td>{{ student.get_programme_display|default:student.programme }}</td>
-                                <td>
-                                    <span style="background: #E8F5E9; color: #2E7D32; padding: 4px 8px; border-radius: 3px; font-size: 0.85rem;">
-                                        {{ student.mode }}
-                                    </span>
-                                </td>
                                 <td>{{ student.admission_date|date:"d M Y" }}</td>
                                 <td>
                                     <div class="actions">
@@ -86,4 +78,68 @@
             </div>
         {% endif %}
     </div>
+
+<!-- Print Styles -->
+<style media="print">
+    @media print {
+        .actions { display: none !important; }
+        .sidebar { display: none !important; }
+        .header-top { display: none !important; }
+        .messages { display: none !important; }
+        .search-box { display: none !important; }
+        
+        /* Remove default browser print headers/footers */
+        @page {
+            size: A4 landscape;
+            margin: 0.5in;
+            @bottom-right {
+                content: "";
+            }
+            @bottom-left {
+                content: "";
+            }
+            @top-left {
+                content: "";
+            }
+            @top-right {
+                content: "";
+            }
+        }
+        
+        html {
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+        
+        body { 
+            background: white !important;
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+        
+        .wrapper {
+            display: block !important;
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+        
+        .main-content {
+            padding: 20px !important;
+            margin: 0 !important;
+        }
+        
+        .card {
+            box-shadow: none !important;
+            border: 1px solid #E5D4B6 !important;
+        }
+        
+        table {
+            width: 100%;
+        }
+        
+        tr {
+            page-break-inside: avoid;
+        }
+    }
+</style>
 {% endblock %}

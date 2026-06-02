@@ -1,0 +1,20 @@
+                    <div class="field">
+                        {{ form.photo.label_tag }} 
+                        {% if is_edit and student.photo %}
+                            <div style="margin: 8px 0; padding: 10px; background: #E8F5E9; border: 1px solid #4CAF50; border-radius: 6px;">
+                                <p style="margin: 0 0 8px 0; font-size: 0.9rem; color: #2E7D32;"><strong>Current Photo:</strong></p>
+                                <img src="{{ student.photo.url }}" alt="Current Student Photo" style="max-width: 150px; border-radius: 6px; border: 2px solid #4CAF50;">
+                                <p style="margin: 8px 0 0 0; font-size: 0.85rem; color: #666;">Leave empty to keep current photo, or upload new photo to replace.</p>
+                            </div>
+                        {% endif %}
+                        {{ form.photo }} 
+                        {{ form.photo.errors }}
+                        <div style="margin-top: 10px; padding: 12px; background: #FFF3E0; border: 1px solid #FFB74D; border-radius: 6px; font-size: 0.85rem; color: #E65100;">
+                            <strong style="color: #FF6F00;">📷 Photo Requirements:</strong><br/>
+                            • <strong>Format:</strong> JPEG, PNG, or WebP image files<br/>
+                            • <strong>File Size:</strong> Maximum 2MB<br/>
+                            • <strong>Dimensions:</strong> Minimum 100×100px, Maximum 2000×2000px<br/>
+                            • <strong>Aspect Ratio:</strong> ID-size photos (roughly square, e.g., 2×2", 3×4")<br/>
+                            • <strong>Quality:</strong> Clear, passport-style identification photo
+                        </div>
+                    </div>
