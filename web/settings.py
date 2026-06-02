@@ -13,7 +13,6 @@ https://docs.djangoproject.com/en/6.0/ref/settings/
 from pathlib import Path
 import os
 
-
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -81,40 +80,6 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-
-# If a DATABASE_URL env var is provided (Render/Postgres), use it to configure the DB.
-# Falls back to the local SQLite database when DATABASE_URL is not set.
-if os.environ.get('DATABASE_URL'):
-    try:
-        import dj_database_url
-        DATABASES['default'] = dj_database_url.parse(os.environ['DATABASE_URL'], conn_max_age=600)
-    except Exception:
-        # If dj_database_url isn't available, keep the default sqlite fallback
-        pass
-
-# Optional: Use Amazon S3 for media files when AWS env vars are provided (recommended for Render)
-if os.environ.get('AWS_S3_BUCKET_NAME'):
-    # Requires: django-storages and boto3 in requirements
-    try:
-        # AWS credentials and bucket
-        AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
-        AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
-        AWS_STORAGE_BUCKET_NAME = os.environ.get('AWS_S3_BUCKET_NAME')
-        AWS_S3_REGION_NAME = os.environ.get('AWS_S3_REGION_NAME') or None
-
-        AWS_S3_CUSTOM_DOMAIN = f"{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com"
-        AWS_DEFAULT_ACL = None
-
-        DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-        MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/media/'
-    except Exception:
-        # If django-storages/boto3 not installed, fall back to local media
-        MEDIA_URL = '/media/'
-        pass
-else:
-    # Local media settings (development / fallback)
-    MEDIA_URL = '/media/'
-    MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
 # Password validation
