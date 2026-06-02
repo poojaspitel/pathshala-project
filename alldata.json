@@ -1,0 +1,555 @@
+[
+{
+  "model": "contenttypes.contenttype",
+  "fields": {
+    "app_label": "admin",
+    "model": "logentry"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "fields": {
+    "app_label": "auth",
+    "model": "group"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "fields": {
+    "app_label": "auth",
+    "model": "permission"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "fields": {
+    "app_label": "auth",
+    "model": "user"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "fields": {
+    "app_label": "contenttypes",
+    "model": "contenttype"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "fields": {
+    "app_label": "sessions",
+    "model": "session"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "fields": {
+    "app_label": "application",
+    "model": "student"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "3nq33dmnn48k0l289ojlu2q4tx3cgf4a",
+  "fields": {
+    "session_data": ".eJxVjEEOwiAQRe_C2pCZAqW4dN8zkBkGpWpoUtqV8e7apAvd_vfef6lI21ri1vISJ1Fnher0uzGlR647kDvV26zTXNdlYr0r-qBNj7Pk5-Vw_w4KtfKtPVkI4hN79F1GR50RTGyBry6EYKgfxJKjkJiNEUEymT30MIAFh6jeH-GpN4U:1wSchT:wWbEx7hHBdPL7LotgQ_CgkK66vABaHJv-0OCPRn_mbo",
+    "expire_date": "2026-06-11T15:31:11.004Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "4o2kujq4ekzwugs4wgow4ntnrmn6nyzs",
+  "fields": {
+    "session_data": ".eJxVjEEOwiAQRe_C2pCZAqW4dN8zkBkGpWpoUtqV8e7apAvd_vfef6lI21ri1vISJ1Fnher0uzGlR647kDvV26zTXNdlYr0r-qBNj7Pk5-Vw_w4KtfKtPVkI4hN79F1GR50RTGyBry6EYKgfxJKjkJiNEUEymT30MIAFh6jeH-GpN4U:1wUNBg:6p5Mzt67CIKramwRaULgZ3173euki5w6K3GV_xp1P_4",
+    "expire_date": "2026-06-16T11:21:36.107Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "iz4d4qrj228f1c38bh8mmoqj8yq8jc05",
+  "fields": {
+    "session_data": ".eJxVjEEOwiAQRe_C2pCZAqW4dN8zkBkGpWpoUtqV8e7apAvd_vfef6lI21ri1vISJ1Fnher0uzGlR647kDvV26zTXNdlYr0r-qBNj7Pk5-Vw_w4KtfKtPVkI4hN79F1GR50RTGyBry6EYKgfxJKjkJiNEUEymT30MIAFh6jeH-GpN4U:1wSq3C:6tCOU41kXS__vsH1IaU6gXxT-LkybIdyIPOaex5zYOo",
+    "expire_date": "2026-06-12T05:46:30.360Z"
+  }
+},
+{
+  "model": "application.student",
+  "pk": 4,
+  "fields": {
+    "first_name": "Mj",
+    "last_name": "hiremath",
+    "date_of_birth": "1992-01-01",
+    "nationality": "Indian",
+    "photo": "student_photos/doctor_coat_men_aVX5Hvw.jpg",
+    "father_name": "aaaa",
+    "mother_name": "bbbbbbb",
+    "occupation": "business",
+    "contact_no": "9535347161",
+    "whatsapp_no": "9535347161",
+    "email": "mj@gmail.com",
+    "address_line1": "hubli",
+    "address_line2": "hubli",
+    "city": "hubli",
+    "state": "Karnataka",
+    "pin_code": "123456",
+    "last_school": "KLE",
+    "last_class": "6th Standard",
+    "year_passing": "2020",
+    "blood_group": "A-",
+    "medical_conditions": "known",
+    "allergies": "aller",
+    "shiva_deeksha": "Yes",
+    "declaration_accepted": true,
+    "admission_date": "2026-05-30"
+  }
+},
+{
+  "model": "application.student",
+  "pk": 5,
+  "fields": {
+    "first_name": "demo",
+    "last_name": "test edit",
+    "date_of_birth": "1991-01-01",
+    "nationality": "Indian",
+    "photo": "student_photos/polo_tshirt_plain_maroon.jpg",
+    "father_name": "fathers name edit",
+    "mother_name": "mothers name edit",
+    "occupation": "business edit",
+    "contact_no": "9049314342",
+    "whatsapp_no": "9049314341",
+    "email": "mmcm@gmail.com",
+    "address_line1": "keshapur edit",
+    "address_line2": "hubli edit",
+    "city": "hubli edit",
+    "state": "Karnataka",
+    "pin_code": "123457",
+    "last_school": "KLE edit",
+    "last_class": "5th Standard",
+    "year_passing": "2020",
+    "blood_group": "O+",
+    "medical_conditions": "know medical condition edit",
+    "allergies": "qwertyui edit",
+    "shiva_deeksha": "No",
+    "declaration_accepted": true,
+    "admission_date": "2026-06-02"
+  }
+},
+{
+  "model": "application.student",
+  "pk": 6,
+  "fields": {
+    "first_name": "test",
+    "last_name": "demoo now",
+    "date_of_birth": "1990-01-01",
+    "nationality": "Indian",
+    "photo": "student_photos/doctor_coat_men_mAsmVG9.jpg",
+    "father_name": "fff",
+    "mother_name": "mmmm",
+    "occupation": "oooo",
+    "contact_no": "1234567890",
+    "whatsapp_no": "1234567890",
+    "email": "ej@gmail.com",
+    "address_line1": "hg",
+    "address_line2": "ghjg",
+    "city": "ggyg",
+    "state": "Karnataka",
+    "pin_code": "123456",
+    "last_school": "KLeee",
+    "last_class": "6th Standard",
+    "year_passing": "2022",
+    "blood_group": "A+",
+    "medical_conditions": "wertyu",
+    "allergies": "ertyui",
+    "shiva_deeksha": "Yes",
+    "declaration_accepted": true,
+    "admission_date": "2026-06-02"
+  }
+},
+{
+  "model": "application.student",
+  "pk": 7,
+  "fields": {
+    "first_name": "fn",
+    "last_name": "ln",
+    "date_of_birth": "2023-01-01",
+    "nationality": "Indian",
+    "photo": "student_photos/polo_tshirt_plain_maroon_35taaRS.jpg",
+    "father_name": "fnn",
+    "mother_name": "mnnn",
+    "occupation": "buisness",
+    "contact_no": "192929292",
+    "whatsapp_no": "1919191919",
+    "email": "ijkj@gmail.com",
+    "address_line1": "re",
+    "address_line2": "ereye",
+    "city": "trytrtr",
+    "state": "Karnataka",
+    "pin_code": "123456",
+    "last_school": "ghjg",
+    "last_class": "6th Standard",
+    "year_passing": "2022",
+    "blood_group": "A-",
+    "medical_conditions": "rtr",
+    "allergies": "rtrtr",
+    "shiva_deeksha": "Yes",
+    "declaration_accepted": true,
+    "admission_date": "2026-06-02"
+  }
+},
+{
+  "model": "application.student",
+  "pk": 8,
+  "fields": {
+    "first_name": "final noww",
+    "last_name": "edit",
+    "date_of_birth": "2023-01-01",
+    "nationality": "Indian",
+    "photo": "student_photos/doctor_coat_men_Ot6GDbe.jpg",
+    "father_name": "fnnnnn",
+    "mother_name": "mnnnnnn",
+    "occupation": "srviiuoiu",
+    "contact_no": "1234567890",
+    "whatsapp_no": "1234567890",
+    "email": "hghj@gmail.com",
+    "address_line1": "rtyrt",
+    "address_line2": "trytr",
+    "city": "rytry",
+    "state": "Andhra Pradesh",
+    "pin_code": "1234567",
+    "last_school": "rtretre",
+    "last_class": "6th Standard",
+    "year_passing": "2021",
+    "blood_group": "A-",
+    "medical_conditions": "tyut",
+    "allergies": "yutuyt",
+    "shiva_deeksha": "Yes",
+    "declaration_accepted": true,
+    "admission_date": "2026-06-02"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can add log entry",
+    "content_type": [
+      "admin",
+      "logentry"
+    ],
+    "codename": "add_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can change log entry",
+    "content_type": [
+      "admin",
+      "logentry"
+    ],
+    "codename": "change_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can delete log entry",
+    "content_type": [
+      "admin",
+      "logentry"
+    ],
+    "codename": "delete_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can view log entry",
+    "content_type": [
+      "admin",
+      "logentry"
+    ],
+    "codename": "view_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can add permission",
+    "content_type": [
+      "auth",
+      "permission"
+    ],
+    "codename": "add_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can change permission",
+    "content_type": [
+      "auth",
+      "permission"
+    ],
+    "codename": "change_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can delete permission",
+    "content_type": [
+      "auth",
+      "permission"
+    ],
+    "codename": "delete_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can view permission",
+    "content_type": [
+      "auth",
+      "permission"
+    ],
+    "codename": "view_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can add group",
+    "content_type": [
+      "auth",
+      "group"
+    ],
+    "codename": "add_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can change group",
+    "content_type": [
+      "auth",
+      "group"
+    ],
+    "codename": "change_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can delete group",
+    "content_type": [
+      "auth",
+      "group"
+    ],
+    "codename": "delete_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can view group",
+    "content_type": [
+      "auth",
+      "group"
+    ],
+    "codename": "view_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can add user",
+    "content_type": [
+      "auth",
+      "user"
+    ],
+    "codename": "add_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can change user",
+    "content_type": [
+      "auth",
+      "user"
+    ],
+    "codename": "change_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can delete user",
+    "content_type": [
+      "auth",
+      "user"
+    ],
+    "codename": "delete_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can view user",
+    "content_type": [
+      "auth",
+      "user"
+    ],
+    "codename": "view_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can add content type",
+    "content_type": [
+      "contenttypes",
+      "contenttype"
+    ],
+    "codename": "add_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can change content type",
+    "content_type": [
+      "contenttypes",
+      "contenttype"
+    ],
+    "codename": "change_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can delete content type",
+    "content_type": [
+      "contenttypes",
+      "contenttype"
+    ],
+    "codename": "delete_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can view content type",
+    "content_type": [
+      "contenttypes",
+      "contenttype"
+    ],
+    "codename": "view_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can add session",
+    "content_type": [
+      "sessions",
+      "session"
+    ],
+    "codename": "add_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can change session",
+    "content_type": [
+      "sessions",
+      "session"
+    ],
+    "codename": "change_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can delete session",
+    "content_type": [
+      "sessions",
+      "session"
+    ],
+    "codename": "delete_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can view session",
+    "content_type": [
+      "sessions",
+      "session"
+    ],
+    "codename": "view_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can add student",
+    "content_type": [
+      "application",
+      "student"
+    ],
+    "codename": "add_student"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can change student",
+    "content_type": [
+      "application",
+      "student"
+    ],
+    "codename": "change_student"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can delete student",
+    "content_type": [
+      "application",
+      "student"
+    ],
+    "codename": "delete_student"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can view student",
+    "content_type": [
+      "application",
+      "student"
+    ],
+    "codename": "view_student"
+  }
+},
+{
+  "model": "auth.user",
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$1naFZSB5fMYldzSsWGTYwA$EJRx2LuldUNbUI/Xx0j74ekTVHaqJiVMhb72qdcjM8c=",
+    "last_login": "2026-06-02T11:21:36.098Z",
+    "is_superuser": true,
+    "username": "user",
+    "first_name": "",
+    "last_name": "",
+    "email": "user@gmail.com",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2026-05-28T15:30:42.943Z",
+    "groups": [],
+    "user_permissions": []
+  }
+}
+]
